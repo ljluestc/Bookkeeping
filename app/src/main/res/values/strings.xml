@@ -7,7 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">Daily Account Book</string>
+    <string name="menu_gallery">Travel Book</string>
+
+    <string name="bottom_bookkeeping">Bookkeeping</string>
+    <string name="bottom_report">Report</string>
+    <string name="bottom_mine">Mine</string>
 </resources>

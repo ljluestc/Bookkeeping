@@ -1,4 +1,4 @@
-package com.hannah.demo.ui.home
+package com.hannah.demo.ui.report
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.hannah.demo.R
 
-class HomeFragment : Fragment() {
+class ReportFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var galleryViewModel: ReportViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        galleryViewModel =
+                ViewModelProviders.of(this).get(ReportViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_report, container, false)
+        val textView: TextView = root.findViewById(R.id.text_gallery)
+        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

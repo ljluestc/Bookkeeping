@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_bookkeeping">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.hannah.demo.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_bookkeeping"
+        android:name="com.hannah.demo.ui.bookkeeping.BookkeepingFragment"
+        android:label="@string/bottom_bookkeeping"
+        tools:layout="@layout/fragment_bookkeeping" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.hannah.demo.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_report"
+        android:name="com.hannah.demo.ui.report.ReportFragment"
+        android:label="@string/bottom_report"
+        tools:layout="@layout/fragment_report" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.hannah.demo.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_mine"
+        android:name="com.hannah.demo.ui.mine.MineFragment"
+        android:label="@string/bottom_mine"
+        tools:layout="@layout/fragment_mine" />
 </navigation>

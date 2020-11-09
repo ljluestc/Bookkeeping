@@ -1,13 +1,13 @@
-package com.hannah.demo.ui.slideshow
+package com.hannah.demo.ui.report
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SlideshowViewModel : ViewModel() {
+class ReportViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is slideshow Fragment"
+        value = "This is report Fragment"
     }
     val text: LiveData<String> = _text
 }
