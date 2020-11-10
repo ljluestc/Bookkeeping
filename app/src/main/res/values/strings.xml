@@ -13,4 +13,9 @@
     <string name="bottom_bookkeeping">Bookkeeping</string>
     <string name="bottom_report">Report</string>
     <string name="bottom_mine">Mine</string>
+
+    <string name="bookkeeping_balance"> 403.55 \n 本月结算余额</string>
+    <string name="bookkeeping_month_income">200.55 \n 本月收入</string>
+    <string name="bookkeeping_month_spend">13.55 \n 本月支出</string>
+
 </resources>

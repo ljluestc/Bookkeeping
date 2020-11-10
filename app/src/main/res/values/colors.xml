@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#20B2AA</color>
+    <color name="colorPrimaryDark">#008080</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="color_fab">#00CED1</color>
+    <color name="color_fab2">#5F9EA0</color>
+
+    <color name="color_red_tomato">#FF6347</color>
+
 </resources>
