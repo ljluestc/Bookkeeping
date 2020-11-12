@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -45,8 +46,7 @@ class BookkeepingFragment : Fragment() {
         })
 
         root.findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            Navigation.findNavController(view).navigate(R.id.action_bookkeepingFragment_to_addItemFragment)
         }
 
         setupRecyclerView(root.findViewById(R.id.bookkeeping_list))

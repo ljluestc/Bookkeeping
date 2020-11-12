@@ -2,6 +2,7 @@ package com.hannah.demo
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navViewDrawer: NavigationView = findViewById(R.id.nav_view_drawer)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val navBottom: BottomNavigationView = findViewById(R.id.nav_bottom)
         val navController = findNavController(R.id.nav_host_fragment)
 
         appBarConfiguration = AppBarConfiguration(setOf(
@@ -36,7 +37,13 @@ class MainActivity : AppCompatActivity() {
         // todo
         navViewDrawer.setupWithNavController(navController)
 
-        navView.setupWithNavController(navController)
+        navBottom.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when(destination.id){
+                R.id.addItemFragment -> navBottom.visibility = View.GONE
+                else -> navBottom.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -49,4 +56,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

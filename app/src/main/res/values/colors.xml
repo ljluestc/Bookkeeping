@@ -9,4 +9,10 @@
 
     <color name="color_red_tomato">#FF6347</color>
 
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="icCategoryExpenseNormal">#3f000000</color>
+    <color name="icCategoryExpenseSelected">#ffffff</color>
+
 </resources>

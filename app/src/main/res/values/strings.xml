@@ -18,4 +18,9 @@
     <string name="bookkeeping_month_income">200.55 \n 本月收入</string>
     <string name="bookkeeping_month_spend">13.55 \n 本月支出</string>
 
+    <string name="nav_add_item">AddItem</string>
+
+    <string name="tab_spend">Spend</string>
+    <string name="tab_income">Income</string>
+
 </resources>
