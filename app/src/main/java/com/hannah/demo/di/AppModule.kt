@@ -2,9 +2,7 @@ package com.hannah.demo.di
 
 import android.content.Context
 import androidx.room.Room
-import com.hannah.demo.database.CategoryDataSource
-import com.hannah.demo.database.CategoryDatabase
-import com.hannah.demo.database.CategoryLocalDataSource
+import com.hannah.demo.database.*
 import com.hannah.demo.utils.Constants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
@@ -53,5 +51,18 @@ object AppModule {
     @Singleton
     @Provides
     fun provideIoDispatcher() = Dispatchers.IO
+
+    @Module
+    @InstallIn(ApplicationComponent::class)
+    object CategoryRepositoryModule {
+        @Singleton
+        @Provides
+        fun provideCategoryRepository(
+            @AppModule.LocalTasksDataSource localDataSource: CategoryDataSource,
+            ioDispatcher: CoroutineDispatcher
+        ): CategoryRepository{
+            return DefaultCategoryRepository(localDataSource, ioDispatcher)
+        }
+    }
 
 }

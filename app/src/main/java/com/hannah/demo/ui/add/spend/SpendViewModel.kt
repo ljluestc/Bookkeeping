@@ -5,13 +5,14 @@ import androidx.lifecycle.*
 import com.hannah.demo.database.CategoryRepository
 import com.hannah.demo.entity.CategoryEntity
 import com.hannah.demo.entity.Result
+import com.hannah.demo.utils.Constants
 import kotlinx.coroutines.launch
 
 class SpendViewModel @ViewModelInject constructor(
     private val categoryRepository: CategoryRepository
 ) : ViewModel() {
 
-//    val items: LiveData<List<CategoryEntity>> = _items
+    val categoryList = MutableLiveData<List<CategoryEntity>>()
 
 //    private val _items: LiveData<List<CategoryEntity>> =
 
@@ -30,10 +31,26 @@ class SpendViewModel @ViewModelInject constructor(
 //        }
 //    }
 
+    init {
+        initCategory()
+    }
+
     fun initCategory(){
         viewModelScope.launch {
-//            categoryRepository.saveCategory(CategoryEntity(name = "other",icon = ))
+            getCategoryList()?.forEach {
+                categoryRepository.saveCategory(it)
+            }
         }
+    }
+
+    private fun getCategoryList(): List<CategoryEntity>? {
+        categoryList.value = listOf(
+            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
+            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
+            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
+            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
+        )
+        return categoryList.value
     }
 
 

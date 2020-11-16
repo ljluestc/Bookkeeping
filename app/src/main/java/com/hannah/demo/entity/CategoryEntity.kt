@@ -4,6 +4,7 @@ import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.hannah.demo.R
 
 /**
  * AUTHOR: hannah
@@ -14,19 +15,20 @@ data class CategoryEntity(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "category_id")
-    private val id: Long = 0,
+    public val id: Long = 0,
 
     @ColumnInfo(name = "category_name")
-    private val name: String = "",
+    public val name: String = "",
 
     @NonNull
     @ColumnInfo(name = "category_icon")
-    private val icon: String = "",
+    public val icon: Int = R.drawable.ic_add,
+
 
     @ColumnInfo(name = "category_type")
-    private val type: Int = 0,
+    public val type: Int = 0,
 
     @ColumnInfo(name = "category_account_id")
-    private val accountId: Long = 0
+    public val accountId: Long = 0
 
 )

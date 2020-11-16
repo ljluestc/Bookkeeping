@@ -12,4 +12,6 @@ object Constants {
     const val TYPE_INCOME = 3
 
     const val DATABASE_NAME = "bookkeeping-db"
+
+    const val IC_NAME_RESTAURANT = "RESTAURANT"
 }

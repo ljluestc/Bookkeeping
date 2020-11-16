@@ -8,6 +8,7 @@ import com.hannah.demo.entity.Result
  * AUTHOR: hannah
  * DATE: 2020-11-11
  */
+
 interface CategoryRepository {
 
     fun observeCategories(): LiveData<Result<List<CategoryEntity>>>
