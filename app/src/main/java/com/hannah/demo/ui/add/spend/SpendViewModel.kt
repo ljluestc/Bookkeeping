@@ -1,10 +1,12 @@
 package com.hannah.demo.ui.add.spend
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.hannah.demo.R
 import com.hannah.demo.database.CategoryRepository
 import com.hannah.demo.entity.CategoryEntity
-import com.hannah.demo.entity.Result
 import com.hannah.demo.utils.Constants
 import kotlinx.coroutines.launch
 
@@ -35,7 +37,7 @@ class SpendViewModel @ViewModelInject constructor(
         initCategory()
     }
 
-    fun initCategory(){
+    private fun initCategory(){
         viewModelScope.launch {
             getCategoryList()?.forEach {
                 categoryRepository.saveCategory(it)
@@ -45,10 +47,12 @@ class SpendViewModel @ViewModelInject constructor(
 
     private fun getCategoryList(): List<CategoryEntity>? {
         categoryList.value = listOf(
-            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
-            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
-            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
-            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND),
+            CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_gallery),
+            CategoryEntity(name = "transport", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_gallery),
+            CategoryEntity(name = "shopping", type = Constants.TYPE_SPEND, icon = R.drawable.ic_home_black_24dp),
+            CategoryEntity(name = "clothes", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_camera),
+            CategoryEntity(name = "entertainment", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_gallery),
+            CategoryEntity(name = "snack", type = Constants.TYPE_SPEND, icon = R.drawable.ic_home_black_24dp),
         )
         return categoryList.value
     }
