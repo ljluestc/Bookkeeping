@@ -1,6 +1,7 @@
 package com.hannah.demo.ui.add.spend
 
 import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,24 +15,11 @@ class SpendViewModel @ViewModelInject constructor(
     private val categoryRepository: CategoryRepository
 ) : ViewModel() {
 
-    val categoryList = MutableLiveData<List<CategoryEntity>>()
+    private val _categoryList = MutableLiveData<List<CategoryEntity>>()
 
-//    private val _items: LiveData<List<CategoryEntity>> =
+    val categoryList: LiveData<List<CategoryEntity>> = _categoryList
 
-
-    //    private val _index = MutableLiveData<Int>()
-//    val text: LiveData<String> = Transformations.map(_index) {
-//        "Hello world from section: $it"
-//    }
-//
-//    fun setIndex(index: Int) {
-//        _index.value = index
-//    }
-//    fun getCategory() : Result<List<CategoryEntity>> {
-//        viewModelScope.launch {
-//             categoryRepository.getCategories()
-//        }
-//    }
+    val item = MutableLiveData<CategoryEntity>()
 
     init {
         initCategory()
@@ -46,7 +34,7 @@ class SpendViewModel @ViewModelInject constructor(
     }
 
     private fun getCategoryList(): List<CategoryEntity>? {
-        categoryList.value = listOf(
+        _categoryList.value = listOf(
             CategoryEntity(name = "restaurant", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_gallery),
             CategoryEntity(name = "transport", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_gallery),
             CategoryEntity(name = "shopping", type = Constants.TYPE_SPEND, icon = R.drawable.ic_home_black_24dp),
@@ -54,8 +42,7 @@ class SpendViewModel @ViewModelInject constructor(
             CategoryEntity(name = "entertainment", type = Constants.TYPE_SPEND, icon = R.drawable.ic_menu_gallery),
             CategoryEntity(name = "snack", type = Constants.TYPE_SPEND, icon = R.drawable.ic_home_black_24dp),
         )
-        return categoryList.value
+        return _categoryList.value
     }
-
 
 }
