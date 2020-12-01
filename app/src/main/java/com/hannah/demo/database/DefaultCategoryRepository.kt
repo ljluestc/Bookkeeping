@@ -2,10 +2,8 @@ package com.hannah.demo.database
 
 import androidx.lifecycle.LiveData
 import com.hannah.demo.entity.CategoryEntity
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
+import com.hannah.demo.entity.Result
+import kotlinx.coroutines.*
 
 /**
  * AUTHOR: hannah
@@ -34,6 +32,48 @@ class DefaultCategoryRepository(
                 categoryLocalDataSource.saveCategory(item)
             }
         }
+    }
+
+    override suspend fun selectedCategory(selectedCategory: CategoryEntity) {
+        withContext(ioDispatcher) {
+            (getCategoryWithId(selectedCategory.id) as? Result.Success)?.let { selectedCategory->
+
+                coroutineScope {
+                    launch {
+                        categoryLocalDataSource.selectedCategory(selectedCategory.data)
+//                        categoryLocalDataSource.getCategories().value?.forEach { item ->
+//                            if (selectedCategory.data == item){
+//
+//                            }else{
+//                                categoryLocalDataSource.unSelectedCategory(item)
+//                            }
+//                        }
+                    }
+                }
+            }
+        }
+    }
+
+    override suspend fun deleteAllCategories() {
+        coroutineScope {
+            launch {
+                categoryLocalDataSource.deleteAllCategories()
+            }
+        }
+    }
+
+    override suspend fun deleteCategoryById(categoryId: Long): Int {
+        coroutineScope {
+            launch {
+                categoryLocalDataSource.deleteCategoryById(categoryId)
+            }
+            return@coroutineScope 1
+        }
+      return -1
+    }
+
+    private suspend fun getCategoryWithId(id: Long): Result<CategoryEntity> {
+        return categoryLocalDataSource.getCategoryById(id)
     }
 
 }

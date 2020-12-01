@@ -11,7 +11,6 @@
         <variable
             name="viewmodel"
             type="com.hannah.demo.ui.add.spend.SpendViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_menu_camera" />
+                app:imageResource="@{viewmodel.icon}"/>
 
             <TextView
                 android:id="@+id/category_choose_text"

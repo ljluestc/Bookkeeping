@@ -26,6 +26,9 @@ data class CategoryEntity(
     @ColumnInfo(name = "category_type")
     val type: Int = 0,
 
+    @ColumnInfo(name = "category_selected")
+    var isSelected: Boolean = false,
+
     @ColumnInfo(name = "category_account_id")
     val accountId: Long = 0
 

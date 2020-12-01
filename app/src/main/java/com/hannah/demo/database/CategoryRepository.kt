@@ -18,4 +18,10 @@ interface CategoryRepository {
 
     suspend fun saveCategory(item: CategoryEntity)
 
+    suspend fun selectedCategory(selectedCategory: CategoryEntity)
+
+    suspend fun deleteAllCategories()
+
+    suspend fun deleteCategoryById(categoryId: Long): Int
+
 }

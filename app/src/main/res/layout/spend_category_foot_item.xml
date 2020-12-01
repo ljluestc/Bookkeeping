@@ -6,10 +6,6 @@
         <import type="android.view.View" />
 
         <variable
-            name="category"
-            type="com.hannah.demo.entity.CategoryEntity" />
-
-        <variable
             name="viewmodel"
             type="com.hannah.demo.ui.add.spend.SpendViewModel" />
     </data>
@@ -19,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:onClick="@{() -> viewmodel.clickCategoryItem(category)}">
+        android:onClick="@{() -> viewmodel.addNewTask()}">
 
         <ImageView
             android:id="@+id/img_category"
@@ -28,23 +24,13 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:textAppearance="?attr/textAppearanceListItem"
-            app:imageResource="@{category.icon}" />
-
-        <ImageView
-            android:id="@+id/ic_checked"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignEnd="@id/img_category"
-            android:layout_alignBottom="@id/img_category"
-            android:src="@drawable/ic_checked"
-            android:visibility="@{category.isSelected ? View.VISIBLE : View.GONE}" />
+            android:src="@drawable/ic_menu_camera"/>
 
         <TextView
-            android:id="@+id/name_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/img_category"
             android:gravity="center"
-            android:text="@{category.name}" />
+            android:text="add" />
     </RelativeLayout>
 </layout>
