@@ -35,7 +35,7 @@ ext {
     hiltAndroidXVersion = '1.0.0-alpha02'
     recyclerViewVersion = '1.1.0'
     timberVersion = '4.7.1'
-    roomVersion = '2.2.5'
+    roomVersion = '2.3.0-alpha03'
     legacyVersion = '1.0.0'
     materialVersion = '1.2.1'
     constraintlayoutVersion = '2.0.4'

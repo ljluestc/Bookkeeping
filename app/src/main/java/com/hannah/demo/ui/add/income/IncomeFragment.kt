@@ -26,7 +26,7 @@ class IncomeFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_tab, container, false)
+        val root = inflater.inflate(R.layout.fragment_spend, container, false)
         val textView: TextView = root.findViewById(R.id.section_label)
         incomeViewModel.text.observe(viewLifecycleOwner, Observer<String> {
             textView.text = it

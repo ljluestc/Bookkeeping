@@ -11,4 +11,4 @@
     android:layout_gravity="center"
     app:layout_anchor="@+id/app_bar"
     app:layout_anchorGravity="center_vertical|start"
-    tools:listitem="@layout/item_spend_category" />
+    tools:listitem="@layout/spend_category_list_item" />

@@ -2,7 +2,6 @@ package com.hannah.demo.database
 
 import androidx.lifecycle.LiveData
 import com.hannah.demo.entity.CategoryEntity
-import com.hannah.demo.entity.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
@@ -17,11 +16,15 @@ class DefaultCategoryRepository(
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : CategoryRepository {
 
-    override fun observeCategories(): LiveData<Result<List<CategoryEntity>>> {
+    override fun observeCategories(): LiveData<List<CategoryEntity>> {
         return categoryLocalDataSource.observeCategories()
     }
 
-    override suspend fun getCategories(): Result<List<CategoryEntity>> {
+    override fun refreshTasks() {
+        categoryLocalDataSource.getCategories()
+    }
+
+    override fun getCategories(): LiveData<List<CategoryEntity>> {
         return categoryLocalDataSource.getCategories()
     }
 

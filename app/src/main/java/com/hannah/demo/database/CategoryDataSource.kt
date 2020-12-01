@@ -2,7 +2,6 @@ package com.hannah.demo.database
 
 import androidx.lifecycle.LiveData
 import com.hannah.demo.entity.CategoryEntity
-import com.hannah.demo.entity.Result
 
 
 /**
@@ -11,9 +10,9 @@ import com.hannah.demo.entity.Result
  */
 interface CategoryDataSource {
 
-    fun observeCategories(): LiveData<Result<List<CategoryEntity>>>
+    fun observeCategories(): LiveData<List<CategoryEntity>>
 
-    suspend fun getCategories(): Result<List<CategoryEntity>>
+    fun getCategories(): LiveData<List<CategoryEntity>>
 
     suspend fun saveCategory(item: CategoryEntity)
 
