@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -15,15 +15,13 @@ import com.hannah.demo.utils.Constants.TAB_SPEND_PAGE_INDEX
 
 class AddItemFragment : Fragment() {
 
-    private lateinit var addItemViewModel: AddItemViewModel
+    private val addItemViewModel by viewModels<AddItemViewModel>()
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        addItemViewModel =
-                ViewModelProvider(this).get(AddItemViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_add_item, container, false)
 
         val viewPager: ViewPager2 = root.findViewById(R.id.view_pager)

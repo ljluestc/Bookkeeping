@@ -27,7 +27,7 @@ class CategoryLocalDataSource(
     }
 
     override suspend fun saveCategory(item: CategoryEntity) = withContext(ioDispatcher) {
-        val categoryEntityList = listOf(
+        val categoryEntityList = mutableListOf(
             CategoryEntity(
                 name = "restaurant",
                 type = Constants.TYPE_SPEND,
@@ -57,6 +57,11 @@ class CategoryLocalDataSource(
                 name = "snack",
                 type = Constants.TYPE_SPEND,
                 icon = R.drawable.ic_home_black_24dp
+            ),
+            CategoryEntity(
+                name = "add",
+                type = Constants.TYPE_FOOT,
+                icon = R.drawable.ic_menu_camera
             ),
         )
         categoryEntityList.forEach {

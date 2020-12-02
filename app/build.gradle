@@ -23,10 +23,6 @@ android {
         dataBinding = true
     }
 
-//    kotlinOptions {
-//        freeCompilerArgs = ["-Xallow-result-return-type"]
-//    }
-
     buildTypes {
         release {
             minifyEnabled false

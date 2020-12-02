@@ -31,7 +31,7 @@ class SpendViewModel @ViewModelInject constructor(
     val items: LiveData<List<CategoryEntity>> = categoryRepository.getCategories()
 
     init {
-        val item = CategoryEntity(name = "new", type = Constants.TYPE_SPEND, icon = R.drawable.ic_home_black_24dp)
+        val item = CategoryEntity(name = "new", type = Constants.TYPE_FOOT, icon = R.drawable.ic_home_black_24dp)
         viewModelScope.launch {
             categoryRepository.deleteAllCategories()
             categoryRepository.saveCategory(item)
