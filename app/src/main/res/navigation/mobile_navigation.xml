@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_bookkeeping_dest">
+    app:startDestination="@+id/nav_bookkeeping">
 
     <fragment
-        android:id="@+id/nav_bookkeeping_dest"
+        android:id="@+id/nav_bookkeeping"
         android:name="com.hannah.demo.ui.bookkeeping.BookkeepingFragment"
         android:label="@string/bottom_bookkeeping"
         tools:layout="@layout/fragment_bookkeeping" >
@@ -21,7 +21,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_report_dest"
+        android:id="@+id/nav_report"
         android:name="com.hannah.demo.ui.report.ReportFragment"
         android:label="@string/bottom_report"
         tools:layout="@layout/fragment_report" />
@@ -64,12 +64,10 @@
         android:label="@string/nav_add_item"
         tools:layout="@layout/fragment_spend" />
 
-
     <fragment
         android:id="@+id/add_new_classification_fragment_dest"
         android:name="com.hannah.demo.ui.classification.AddNewClassificationFragment"
-        android:label="@string/nav_add_item"
+        android:label="@string/nav_add_new_classification"
         tools:layout="@layout/fragment_add_new_classification" />
-
 
 </navigation>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="adapter"
+            type="com.hannah.demo.ui.classification.ClassificationDetailListChildAdapter" />
+
+        <variable
+            name="classification"
+            type="com.hannah.demo.entity.ClassificationEntity" />
+
+        <variable
+            name="viewmodel"
+            type="com.hannah.demo.ui.classification.AddNewClassificationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/category_header"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@{ classification.title }"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_all_detail_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_header"
+            app:spanCount="3"
+            tools:listitem="@layout/classification_category_detail_child" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
