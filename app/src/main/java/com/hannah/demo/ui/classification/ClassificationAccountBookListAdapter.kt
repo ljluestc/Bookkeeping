@@ -3,7 +3,9 @@ package com.hannah.demo.ui.classification
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hannah.demo.R
 import com.hannah.demo.databinding.ClassificationAccountBookListItemBinding
+import com.hannah.demo.entity.AccountBook
 
 /**
  * AUTHOR: hannah
@@ -11,7 +13,7 @@ import com.hannah.demo.databinding.ClassificationAccountBookListItemBinding
  * 左边的adapter
  */
 class ClassificationAccountBookListAdapter(
-    private val books: List<String>,
+    private val books: List<AccountBook>,
     private val classificationViewModel: AddNewClassificationViewModel
 ) :
     RecyclerView.Adapter<ClassificationAccountBookListAdapter.AccountBookViewHolder>() {
@@ -30,9 +32,9 @@ class ClassificationAccountBookListAdapter(
     class AccountBookViewHolder(private val binding: ClassificationAccountBookListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: String, classificationViewModel: AddNewClassificationViewModel) {
+        fun bind(item: AccountBook, classificationViewModel: AddNewClassificationViewModel) {
             binding.viewmodel = classificationViewModel
-            binding.accountBookName.text = item
+            binding.bookName = item
             binding.executePendingBindings()
         }
 

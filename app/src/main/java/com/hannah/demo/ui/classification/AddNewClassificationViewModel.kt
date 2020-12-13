@@ -1,27 +1,35 @@
 package com.hannah.demo.ui.classification
 
+import android.annotation.SuppressLint
+import android.widget.TextView
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hannah.demo.R
+import com.hannah.demo.entity.AccountBook
 import com.hannah.demo.entity.CategoryEntity
 import com.hannah.demo.entity.ClassificationEntity
+import com.hannah.demo.entity.Event
 
 /**
  * AUTHOR: hannah
  * DATE: 2020-12-01
  */
-class AddNewClassificationViewModel@ViewModelInject constructor(): ViewModel() {
+class AddNewClassificationViewModel @ViewModelInject constructor() : ViewModel() {
 
-    private val _books = MutableLiveData<List<String>>()
-    val books: LiveData<List<String>> = _books
+    private val _books = MutableLiveData<List<AccountBook>>()
+    val books: LiveData<List<AccountBook>> = _books
 
     private val _classifications = MutableLiveData<List<ClassificationEntity>>()
     val classifications: LiveData<List<ClassificationEntity>> = _classifications
 
     private val _childListData = MutableLiveData<List<CategoryEntity>>()
     val childListData: LiveData<List<CategoryEntity>> = _childListData
+
+    private val _clickBookItemEvent = MutableLiveData<Event<AccountBook>>()
+    val clickBookItemEvent: LiveData<Event<AccountBook>> = _clickBookItemEvent
+
 
     init {
         _books.value = addBookData()
@@ -79,10 +87,17 @@ class AddNewClassificationViewModel@ViewModelInject constructor(): ViewModel() {
         )
     }
 
-    private fun addBookData(): List<String> {
-        return listOf<String>(
-            "DAILY", "CHILD", "BUSINESS", "TRAVEL"
+    private fun addBookData(): List<AccountBook> {
+        return listOf<AccountBook>(
+            AccountBook.DAILY,
+            AccountBook.CHILD,
+            AccountBook.BUSINESS,
+            AccountBook.TRAVEL
         )
     }
 
+    fun clickBookItem(bookName: AccountBook) {
+        _clickBookItemEvent.value = Event(bookName)
+//        v.setBackgroundColor(R.color.white)
+    }
 }
