@@ -1,22 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.mine.MineFragment">
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.hannah.demo.ui.mine.MineViewModel" />
+    </data>
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        tools:context=".ui.mine.MineFragment">
+        <LinearLayout
+            android:id="@+id/ll_user"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/image_avatar_width"
+                android:layout_height="@dimen/image_avatar_width"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/text_medium"
+                android:textColor="@color/white"
+                android:text="@string/mine_login_register"
+                app:drawableRightCompat="@drawable/ic_add" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ll_user"
+            android:background="@color/bg_gray"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:textSize="@dimen/text_small"
+                android:text="@string/mine_common_question"
+                app:drawableRightCompat="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_2"
+                app:drawableLeftCompat="@drawable/ic_home_black_24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:textSize="@dimen/text_small"
+                android:text="@string/mine_feedback"
+                app:drawableRightCompat="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_2"
+                app:drawableLeftCompat="@drawable/ic_dashboard_black_24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:textSize="@dimen/text_small"
+                android:text="@string/mine_setting"
+                app:drawableRightCompat="@drawable/ic_add"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_2"
+                app:drawableLeftCompat="@drawable/ic_notifications_black_24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:textSize="@dimen/text_small"
+                android:text="@string/mine_exchange"
+                app:drawableRightCompat="@mipmap/ic_arrow_right"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_2"
+                app:drawableLeftCompat="@drawable/ic_dashboard_black_24dp" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

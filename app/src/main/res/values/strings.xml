@@ -24,4 +24,12 @@
     <string name="tab_spend">Spend</string>
     <string name="tab_income">Income</string>
 
+    <string name="mine_login_register">Login/Register</string>
+    <string name="mine_common_question">Common Questions</string>
+    <string name="mine_feedback">Feedback</string>
+    <string name="mine_exchange">Exchange Rage</string>
+    <string name="mine_setting">Setting</string>
+
+
+
 </resources>
