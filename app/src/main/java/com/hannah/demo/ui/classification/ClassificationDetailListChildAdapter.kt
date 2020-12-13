@@ -13,7 +13,7 @@ import com.hannah.demo.entity.CategoryEntity
  * DATE: 2020-12-02
  * 最底层的adapter
  */
-class ClassificationDetailListChildAdapter(private val classificationViewModel: AddNewClassificationViewModel) :
+class ClassificationDetailListChildAdapter(private val data: List<CategoryEntity>) :
     ListAdapter<CategoryEntity, ClassificationDetailListChildAdapter.ClassificationViewHolder>(
         ClassificationDiffCallback()
     ) {
@@ -21,24 +21,24 @@ class ClassificationDetailListChildAdapter(private val classificationViewModel: 
         parent: ViewGroup,
         viewType: Int
     ): ClassificationViewHolder {
-        return ClassificationViewHolder.fromNormal(parent)
+        return ClassificationViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ClassificationViewHolder, position: Int) {
-        val item = getItem(position)
-        holder.bind(item, classificationViewModel)
+        val item = data[position]
+        holder.bind(item)
     }
 
     class ClassificationViewHolder(private val binding: ClassificationCategoryDetailChildBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: CategoryEntity, classificationViewModel: AddNewClassificationViewModel) {
-            binding.viewmodel = classificationViewModel
+        fun bind(item: CategoryEntity) {
             binding.category = item
             binding.executePendingBindings()
         }
+
         companion object {
-            fun fromNormal(parent: ViewGroup): ClassificationViewHolder {
+            fun from(parent: ViewGroup): ClassificationViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ClassificationCategoryDetailChildBinding.inflate(
                     layoutInflater,

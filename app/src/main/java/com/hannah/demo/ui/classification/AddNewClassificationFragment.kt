@@ -22,7 +22,6 @@ class AddNewClassificationFragment : Fragment(){
 
     private lateinit var leftAdapter: ClassificationAccountBookListAdapter
     private lateinit var rightAdapter: ClassificationDetailListAdapter
-    private lateinit var rightChildAdapter: ClassificationDetailListChildAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +32,6 @@ class AddNewClassificationFragment : Fragment(){
             viewmodel = classificationViewModel
         }
         addClassificationBinding.lifecycleOwner = this.viewLifecycleOwner
-
         return addClassificationBinding.root
     }
 
@@ -45,8 +43,7 @@ class AddNewClassificationFragment : Fragment(){
         })
 
         classificationViewModel.classifications.observe(viewLifecycleOwner, Observer {
-            rightChildAdapter = ClassificationDetailListChildAdapter(classificationViewModel)
-            rightAdapter = ClassificationDetailListAdapter(it, rightChildAdapter, classificationViewModel)
+            rightAdapter = ClassificationDetailListAdapter(it, classificationViewModel)
             addClassificationBinding.categoryDetailList.adapter = rightAdapter
         })
     }

@@ -14,11 +14,6 @@ import com.hannah.demo.entity.ClassificationEntity
  */
 class AddNewClassificationViewModel@ViewModelInject constructor(): ViewModel() {
 
-    private val _accountBookName = MutableLiveData<String>().apply {
-        value = "Daily"
-    }
-    val accountBookName: LiveData<String> = _accountBookName
-
     private val _books = MutableLiveData<List<String>>()
     val books: LiveData<List<String>> = _books
 

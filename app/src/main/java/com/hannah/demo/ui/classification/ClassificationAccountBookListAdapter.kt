@@ -19,7 +19,7 @@ class ClassificationAccountBookListAdapter(
         parent: ViewGroup,
         viewType: Int
     ): AccountBookViewHolder {
-        return AccountBookViewHolder.fromNormal(parent)
+        return AccountBookViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: AccountBookViewHolder, position: Int) {
@@ -37,7 +37,7 @@ class ClassificationAccountBookListAdapter(
         }
 
         companion object {
-            fun fromNormal(parent: ViewGroup): AccountBookViewHolder {
+            fun from(parent: ViewGroup): AccountBookViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ClassificationAccountBookListItemBinding.inflate(
                     layoutInflater,
