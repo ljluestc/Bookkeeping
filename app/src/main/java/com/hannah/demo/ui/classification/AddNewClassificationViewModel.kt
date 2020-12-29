@@ -1,7 +1,5 @@
 package com.hannah.demo.ui.classification
 
-import android.annotation.SuppressLint
-import android.widget.TextView
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

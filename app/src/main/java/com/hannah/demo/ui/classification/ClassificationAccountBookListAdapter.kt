@@ -3,7 +3,6 @@ package com.hannah.demo.ui.classification
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.hannah.demo.R
 import com.hannah.demo.databinding.ClassificationAccountBookListItemBinding
 import com.hannah.demo.entity.AccountBook
 

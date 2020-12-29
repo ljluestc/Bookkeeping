@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import com.hannah.demo.databinding.FragmentAddNewClassificationBinding
 import com.hannah.demo.entity.EventObserver
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 /**
  * AUTHOR: hannah
