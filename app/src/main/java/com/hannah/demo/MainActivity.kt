@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
             when(destination.id){
                 R.id.add_item_fragment_dest -> navBottom.visibility = View.GONE
                 R.id.add_new_classification_fragment_dest -> navBottom.visibility = View.GONE
+                R.id.login_fragment_dest -> navBottom.visibility = View.GONE
+                R.id.common_question_fragment_dest -> navBottom.visibility = View.GONE
                 else -> navBottom.visibility = View.VISIBLE
             }
         }

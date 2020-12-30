@@ -24,12 +24,17 @@
     <string name="tab_spend">Spend</string>
     <string name="tab_income">Income</string>
 
+    <string name="mine_login">Login</string>
+    <string name="mine_register">Register</string>
     <string name="mine_login_register">Login/Register</string>
     <string name="mine_common_question">Common Questions</string>
     <string name="mine_feedback">Feedback</string>
     <string name="mine_exchange">Exchange Rage</string>
     <string name="mine_setting">Setting</string>
 
+    <string name="login_google">Sign in with Google</string>
+    <string name="login_facebook">Sign in with Facebook</string>
+    <string name="login_email">Sign in with Email</string>
 
 
 </resources>

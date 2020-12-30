@@ -30,7 +30,22 @@
         android:id="@+id/nav_mine"
         android:name="com.hannah.demo.ui.mine.MineFragment"
         android:label="@string/bottom_mine"
-        tools:layout="@layout/fragment_mine" />
+        tools:layout="@layout/fragment_mine" >
+
+        <action android:id="@+id/action_mineFragment_to_loginFragment"
+            app:destination="@id/login_fragment_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action android:id="@+id/action_mineFragment_to_commonQuestionFragment"
+            app:destination="@id/common_question_fragment_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 
     <fragment
         android:id="@+id/add_item_fragment_dest"
@@ -69,5 +84,17 @@
         android:name="com.hannah.demo.ui.classification.AddNewClassificationFragment"
         android:label="@string/nav_add_new_classification"
         tools:layout="@layout/fragment_add_new_classification" />
+
+    <fragment
+        android:id="@+id/login_fragment_dest"
+        android:name="com.hannah.demo.ui.mine.login.LoginFragment"
+        android:label="@string/mine_login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/common_question_fragment_dest"
+        android:name="com.hannah.demo.ui.mine.questions.CommonQuestionFragment"
+        android:label="@string/mine_common_question"
+        tools:layout="@layout/fragment_common_question" />
 
 </navigation>
