@@ -1,8 +1,6 @@
 package com.hannah.demo.utils
 
-import android.graphics.drawable.Drawable
 import android.widget.ImageView
-import androidx.core.content.res.ResourcesCompat
 import com.hannah.demo.R
 
 /**
@@ -11,7 +9,6 @@ import com.hannah.demo.R
  */
 //class DrawbleUtils {
 //    val myImage: Drawable = ResourcesCompat.getDrawable(context.resources, R.drawable.my_image, null)
-//
 //}
 
 fun ImageView.imageCardAssignation(imageSelected: Int): Int {

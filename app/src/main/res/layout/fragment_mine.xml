@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
+            name="user"
+            type="com.google.firebase.auth.FirebaseUser" />
+        <variable
             name="viewmodel"
             type="com.hannah.demo.ui.mine.MineViewModel" />
     </data>
@@ -25,18 +28,17 @@
                 android:layout_height="@dimen/image_avatar_width"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:background="@mipmap/ic_launcher_round"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_vertical"
                 android:textSize="@dimen/text_medium"
                 android:textColor="@color/white"
-                android:text="@string/mine_login_register"
-                android:onClick="@{() -> viewmodel.openLoginRegister()}"
-                app:drawableRightCompat="@drawable/ic_add" />
+                android:text="@{user.displayName}"
+                android:onClick="@{() -> viewmodel.openLoginRegister()}" />
         </LinearLayout>
 
         <LinearLayout

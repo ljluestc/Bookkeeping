@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "795212531816",
+    "project_id": "bookkeeping-9b5b3",
+    "storage_bucket": "bookkeeping-9b5b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795212531816:android:4e810eeb4967eef9fad3dd",
+        "android_client_info": {
+          "package_name": "com.hannah.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795212531816-f1jn0ao05k6gsc1elnvrog7t7bfan1de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBvWVRvyiC5GdcFTW8XrEbLHhlU-ib9PM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795212531816-f1jn0ao05k6gsc1elnvrog7t7bfan1de.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

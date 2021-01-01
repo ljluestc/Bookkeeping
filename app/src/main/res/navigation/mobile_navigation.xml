@@ -45,6 +45,12 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+
+        <argument
+            android:name="user"
+            app:argType="com.google.firebase.auth.FirebaseUser"
+            android:defaultValue="@null"
+            app:nullable="true"/>
     </fragment>
 
     <fragment
@@ -89,7 +95,13 @@
         android:id="@+id/login_fragment_dest"
         android:name="com.hannah.demo.ui.mine.login.LoginFragment"
         android:label="@string/mine_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mineFragment"
+            app:destination="@id/nav_mine"
+            app:popUpTo="@+id/nav_mine"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/common_question_fragment_dest"

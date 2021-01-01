@@ -41,6 +41,11 @@ ext {
     materialVersion = '1.2.1'
     constraintlayoutVersion = '2.0.4'
 
+    firebaseBomVersion = '26.2.0'
+    googlePlayServiceVersion = '19.0.0'
+    multidexVersion = '1.0.3'
+    glideVersion = '4.11.0'
+
     //test
     espressoVersion = '3.3.0'
     testVersion = '1.1.2'

@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.hannah.demo.databinding.FragmentMineBinding
 import com.hannah.demo.entity.EventObserver
 
 class MineFragment : Fragment() {
 
     private val mineViewModel by viewModels<MineViewModel>()
-
+    private val args : MineFragmentArgs by navArgs()
     private lateinit var fragmentMineBinding: FragmentMineBinding
 
     override fun onCreateView(
@@ -24,6 +25,7 @@ class MineFragment : Fragment() {
         fragmentMineBinding = FragmentMineBinding.inflate(layoutInflater, container, false).apply {
             viewmodel = mineViewModel
         }
+        fragmentMineBinding.user = args.user
         return fragmentMineBinding.root
     }
 
