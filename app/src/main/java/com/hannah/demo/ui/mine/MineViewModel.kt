@@ -3,14 +3,16 @@ package com.hannah.demo.ui.mine
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.FirebaseUser
 import com.hannah.demo.entity.Event
 
 class MineViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Mine Fragment"
-    }
-    val text: LiveData<String> = _text
+    private var _userName = MutableLiveData<String>()
+    var userName: LiveData<String> = _userName
+
+    private var _avatarUrl = MutableLiveData<String>()
+    var avatarUrl: LiveData<String> = _avatarUrl
 
     private val _openLoginRegister = MutableLiveData<Event<Unit>>()
     val openLoginRegister: LiveData<Event<Unit>> = _openLoginRegister
@@ -26,6 +28,9 @@ class MineViewModel : ViewModel() {
         _openCommonQuestion.value = Event(Unit)
     }
 
-
+    fun updateUser(user: FirebaseUser?){
+        _userName.value = user?.displayName
+        _avatarUrl.value = user?.photoUrl?.toString()
+    }
 
 }

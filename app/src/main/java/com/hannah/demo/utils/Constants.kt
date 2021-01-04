@@ -16,5 +16,5 @@ object Constants {
 
     const val IC_NAME_RESTAURANT = "RESTAURANT"
 
-    const val FIREBASE_SIGN_IN_CODE = 100
+    const val FIREBASE_GOOGLE_SIGN_IN_CODE = 100
 }

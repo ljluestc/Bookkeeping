@@ -2,10 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
-        <variable
-            name="user"
-            type="com.google.firebase.auth.FirebaseUser" />
         <variable
             name="viewmodel"
             type="com.hannah.demo.ui.mine.MineViewModel" />
@@ -15,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.mine.MineFragment">
+
         <LinearLayout
             android:id="@+id/ll_user"
             android:layout_width="match_parent"
@@ -24,88 +23,91 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/img_avatar"
                 android:layout_width="@dimen/image_avatar_width"
                 android:layout_height="@dimen/image_avatar_width"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:background="@mipmap/ic_launcher_round"/>
+                android:background="@mipmap/ic_launcher_round" />
 
             <TextView
+                android:id="@+id/tv_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
                 android:layout_gravity="center_vertical"
-                android:textSize="@dimen/text_medium"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewmodel.openLoginRegister()}"
+                android:text="@{viewmodel.userName}"
                 android:textColor="@color/white"
-                android:text="@{user.displayName}"
-                android:onClick="@{() -> viewmodel.openLoginRegister()}" />
+                android:textSize="@dimen/text_medium" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/ll_user"
             android:background="@color/bg_gray"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/ll_user">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_fix_height"
-                android:padding="@dimen/nav_header_vertical_spacing"
-                android:textSize="@dimen/text_small"
-                android:text="@string/mine_common_question"
-                app:drawableRightCompat="@drawable/ic_arrow_right"
-                android:gravity="center_vertical"
                 android:drawablePadding="@dimen/dp_2"
+                android:gravity="center_vertical"
                 android:onClick="@{()-> viewmodel.jumpToCommonQuestionPage()}"
-                app:drawableLeftCompat="@drawable/ic_home_black_24dp" />
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:text="@string/mine_common_question"
+                android:textSize="@dimen/text_small"
+                app:drawableLeftCompat="@drawable/ic_home_black_24dp"
+                app:drawableRightCompat="@drawable/ic_arrow_right" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_fix_height"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center_vertical"
                 android:padding="@dimen/nav_header_vertical_spacing"
-                android:textSize="@dimen/text_small"
                 android:text="@string/mine_feedback"
-                app:drawableRightCompat="@drawable/ic_arrow_right"
-                android:gravity="center_vertical"
-                android:drawablePadding="@dimen/dp_2"
-                app:drawableLeftCompat="@drawable/ic_dashboard_black_24dp" />
+                android:textSize="@dimen/text_small"
+                app:drawableLeftCompat="@drawable/ic_dashboard_black_24dp"
+                app:drawableRightCompat="@drawable/ic_arrow_right" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_fix_height"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center_vertical"
                 android:padding="@dimen/nav_header_vertical_spacing"
-                android:textSize="@dimen/text_small"
                 android:text="@string/mine_setting"
-                app:drawableRightCompat="@drawable/ic_arrow_right"
-                android:gravity="center_vertical"
-                android:drawablePadding="@dimen/dp_2"
-                app:drawableLeftCompat="@drawable/ic_notifications_black_24dp" />
+                android:textSize="@dimen/text_small"
+                app:drawableLeftCompat="@drawable/ic_notifications_black_24dp"
+                app:drawableRightCompat="@drawable/ic_arrow_right" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_fix_height"
-                android:padding="@dimen/nav_header_vertical_spacing"
-                android:textSize="@dimen/text_small"
-                android:text="@string/mine_exchange"
-                app:drawableRightCompat="@drawable/ic_arrow_right"
-                android:gravity="center_vertical"
                 android:drawablePadding="@dimen/dp_2"
-                app:drawableLeftCompat="@drawable/ic_dashboard_black_24dp" />
+                android:gravity="center_vertical"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:text="@string/mine_exchange"
+                android:textSize="@dimen/text_small"
+                app:drawableLeftCompat="@drawable/ic_dashboard_black_24dp"
+                app:drawableRightCompat="@drawable/ic_arrow_right" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
