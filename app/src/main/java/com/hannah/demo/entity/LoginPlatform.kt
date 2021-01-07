@@ -7,5 +7,4 @@ package com.hannah.demo.entity
 enum class LoginPlatform {
     GOOGLE,
     FACEBOOK,
-    EMAIL
 }
