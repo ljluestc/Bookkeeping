@@ -14,7 +14,7 @@ class FeedbackViewModel : ViewModel() {
     private val _submitFeedback = MutableLiveData<Event<Unit>>()
     val submitFeedback: LiveData<Event<Unit>> = _submitFeedback
 
-    fun submit(){
+    fun submit() {
         _submitFeedback.value = Event(Unit)
     }
 }
