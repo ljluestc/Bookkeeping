@@ -39,5 +39,9 @@
     <string name="facebook_app_id">1955980534542765</string>
     <string name="fb_login_protocol_scheme">fb1955980534542765</string>
 
+    <string name="feedback_advice">Please leave your valuable comments or suggestions and we will try our best to improve them.</string>
+    <string name="feedback_phone">Please leave your contact information so that I can contact you better.</string>
+    <string name="feedback_submit">Submit</string>
+
 
 </resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.hannah.demo.ui.mine.feedback.FeedbackViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_15"
+            android:padding="@dimen/dp_5"
+            android:background="@color/white"
+            android:gravity="left"
+            android:minHeight="@dimen/edit_input_height"
+            android:hint="@string/feedback_advice"
+            android:textSize="@dimen/text_small" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_avatar_height"
+            android:layout_margin="@dimen/dp_15"
+            android:padding="@dimen/dp_5"
+            android:background="@color/white"
+            android:hint="@string/feedback_phone"
+            android:textSize="@dimen/text_smaller" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_fix_height"
+            android:layout_margin="@dimen/dp_15"
+            android:text="@string/feedback_submit"
+            android:textSize="@dimen/text_large"
+            android:gravity="center"
+            android:onClick="@{()-> viewmodel.submit()}"
+            android:textColor="@color/color_red_tomato"
+            android:background="@drawable/button_background_login"/>
+    </LinearLayout>
+
+</layout>
+

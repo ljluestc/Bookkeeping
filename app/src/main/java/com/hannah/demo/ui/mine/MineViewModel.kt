@@ -20,12 +20,19 @@ class MineViewModel : ViewModel() {
     private val _openCommonQuestion = MutableLiveData<Event<Unit>>()
     val openCommonQuestion: LiveData<Event<Unit>> = _openCommonQuestion
 
+    private val _openFeedback = MutableLiveData<Event<Unit>>()
+    val openFeedback: LiveData<Event<Unit>> = _openFeedback
+
     fun openLoginRegister(){
         _openLoginRegister.value = Event(Unit)
     }
 
     fun jumpToCommonQuestionPage(){
         _openCommonQuestion.value = Event(Unit)
+    }
+
+    fun jumpToFeedbackPage(){
+        _openFeedback.value = Event(Unit)
     }
 
     fun updateUser(user: FirebaseUser?){
