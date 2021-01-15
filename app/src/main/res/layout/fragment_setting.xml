@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.hannah.demo.ui.mine.setting.SettingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_gray"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:paddingEnd="@dimen/nav_header_vertical_spacing"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="@dimen/dp_2"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/nav_header_vertical_spacing"
+                    android:text="@string/setting_current_version"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:text="@{viewmodel.version}"
+                    android:gravity="right|center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:text="@string/setting_user_protocol"
+                android:textSize="@dimen/text_small"
+                app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_fix_height"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:text="@string/setting_about_me"
+                android:textSize="@dimen/text_small"
+                app:drawableRightCompat="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

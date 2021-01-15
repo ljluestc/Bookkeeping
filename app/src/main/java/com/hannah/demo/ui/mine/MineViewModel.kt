@@ -23,6 +23,9 @@ class MineViewModel : ViewModel() {
     private val _openFeedback = MutableLiveData<Event<Unit>>()
     val openFeedback: LiveData<Event<Unit>> = _openFeedback
 
+    private val _openSetting = MutableLiveData<Event<Unit>>()
+    val openSetting: LiveData<Event<Unit>> = _openSetting
+
     fun openLoginRegister() {
         _openLoginRegister.value = Event(Unit)
     }
@@ -33,6 +36,10 @@ class MineViewModel : ViewModel() {
 
     fun jumpToFeedbackPage() {
         _openFeedback.value = Event(Unit)
+    }
+
+    fun jumpToSettingPage() {
+        _openSetting.value = Event(Unit)
     }
 
     fun updateUser(user: FirebaseUser?) {

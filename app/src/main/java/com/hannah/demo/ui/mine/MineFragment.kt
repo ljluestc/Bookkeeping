@@ -44,11 +44,19 @@ class MineFragment : Fragment() {
         mineViewModel.openFeedback.observe(viewLifecycleOwner, EventObserver{
             navigateToFeedback()
         })
+        mineViewModel.openSetting.observe(viewLifecycleOwner, EventObserver{
+            navigateToSetting()
+        })
         args.user?.apply {
             mineViewModel.avatarUrl.observe(viewLifecycleOwner, Observer {
                 updateAvatar(it)
             })
         }
+    }
+
+    private fun navigateToSetting() {
+        val action = MineFragmentDirections.actionMineFragmentToSettingFragment()
+        findNavController().navigate(action)
     }
 
     private fun navigateToFeedback() {

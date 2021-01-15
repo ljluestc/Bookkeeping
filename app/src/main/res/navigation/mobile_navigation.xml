@@ -53,6 +53,15 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
 
+
+        <action android:id="@+id/action_mineFragment_to_settingFragment"
+            app:destination="@id/setting_fragment_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+
         <argument
             android:name="user"
             app:argType="com.google.firebase.auth.FirebaseUser"
@@ -121,5 +130,11 @@
         android:name="com.hannah.demo.ui.mine.feedback.FeedbackFragment"
         android:label="@string/mine_feedback"
         tools:layout="@layout/fragment_feedback" />
+
+    <fragment
+        android:id="@+id/setting_fragment_dest"
+        android:name="com.hannah.demo.ui.mine.setting.SettingFragment"
+        android:label="@string/mine_setting"
+        tools:layout="@layout/fragment_setting" />
 
 </navigation>

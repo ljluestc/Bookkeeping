@@ -43,5 +43,9 @@
     <string name="feedback_phone">Please leave your contact information so that I can contact you better.</string>
     <string name="feedback_submit">Submit</string>
 
+    <string name="setting_current_version">Current Version</string>
+    <string name="setting_user_protocol">User Protocol</string>
+    <string name="setting_about_me">About Me</string>
+
 
 </resources>
