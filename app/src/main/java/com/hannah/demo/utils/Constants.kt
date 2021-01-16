@@ -17,4 +17,7 @@ object Constants {
     const val IC_NAME_RESTAURANT = "RESTAURANT"
 
     const val FIREBASE_GOOGLE_SIGN_IN_CODE = 100
+
+    const val DEFAULT_ADVICE = "default advice"
+    const val DEFAULT_PHONE = "123-456-7890"
 }

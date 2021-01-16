@@ -13,16 +13,18 @@
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/feedback"
+            android:id="@+id/advice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_15"
             android:padding="@dimen/dp_5"
             android:background="@color/white"
-            android:gravity="left"
+            android:gravity="start"
             android:minHeight="@dimen/edit_input_height"
             android:hint="@string/feedback_advice"
-            android:textSize="@dimen/text_small" />
+            android:textSize="@dimen/text_small"
+            android:imeOptions="flagNoExtractUi"
+            android:text="@={viewmodel.advice}"/>
 
         <EditText
             android:id="@+id/phone"
@@ -32,7 +34,9 @@
             android:padding="@dimen/dp_5"
             android:background="@color/white"
             android:hint="@string/feedback_phone"
-            android:textSize="@dimen/text_smaller" />
+            android:textSize="@dimen/text_smaller"
+            android:imeOptions="flagNoExtractUi"
+            android:text="@={viewmodel.phone}"/>
 
         <TextView
             android:id="@+id/submit"
