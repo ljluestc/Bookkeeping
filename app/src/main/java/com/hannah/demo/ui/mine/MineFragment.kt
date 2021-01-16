@@ -28,26 +28,25 @@ class MineFragment : Fragment() {
         fragmentMineBinding = FragmentMineBinding.inflate(layoutInflater, container, false).apply {
             viewmodel = mineViewModel
         }
-        fragmentMineBinding.tvUserName.text = args.user?.displayName ?: "Login"
         return fragmentMineBinding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mineViewModel.updateUser(args.user)
         mineViewModel.openLoginRegister.observe(viewLifecycleOwner, EventObserver {
             navigateToLoginRegister()
         })
         mineViewModel.openCommonQuestion.observe(viewLifecycleOwner, EventObserver {
             navigateToCommonQuestionPage()
         })
-        mineViewModel.openFeedback.observe(viewLifecycleOwner, EventObserver{
+        mineViewModel.openFeedback.observe(viewLifecycleOwner, EventObserver {
             navigateToFeedback()
         })
-        mineViewModel.openSetting.observe(viewLifecycleOwner, EventObserver{
+        mineViewModel.openSetting.observe(viewLifecycleOwner, EventObserver {
             navigateToSetting()
         })
-        args.user?.apply {
+        args.user.apply {
+            mineViewModel.updateUser(args.user)
             mineViewModel.avatarUrl.observe(viewLifecycleOwner, Observer {
                 updateAvatar(it)
             })
@@ -78,7 +77,7 @@ class MineFragment : Fragment() {
         Glide
             .with(this)
             .load(imageUrl)
-            .centerCrop()
+            .circleCrop()
             .placeholder(R.mipmap.ic_launcher_round)
             .into(fragmentMineBinding.imgAvatar)
     }

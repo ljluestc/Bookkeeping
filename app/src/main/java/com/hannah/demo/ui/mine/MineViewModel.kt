@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseUser
 import com.hannah.demo.entity.Event
+import com.hannah.demo.utils.Constants.USER_LOGIN_DEFAULT
 
 class MineViewModel : ViewModel() {
 
-    private var _userName = MutableLiveData<String>()
+    private var _userName = MutableLiveData<String>().apply {
+        this.value = USER_LOGIN_DEFAULT
+    }
     var userName: LiveData<String> = _userName
 
     private var _avatarUrl = MutableLiveData<String>()
