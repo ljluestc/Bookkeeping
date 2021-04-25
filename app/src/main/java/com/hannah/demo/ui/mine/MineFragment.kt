@@ -45,7 +45,7 @@ class MineFragment : Fragment() {
         mineViewModel.openSetting.observe(viewLifecycleOwner, EventObserver {
             navigateToSetting()
         })
-        args.user.apply {
+        args.user?.apply {
             mineViewModel.updateUser(args.user)
             mineViewModel.avatarUrl.observe(viewLifecycleOwner, Observer {
                 updateAvatar(it)
