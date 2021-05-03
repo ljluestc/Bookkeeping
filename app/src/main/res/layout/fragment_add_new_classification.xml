@@ -11,9 +11,10 @@
             type="com.hannah.demo.ui.classification.AddNewClassificationViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.add.AddItemFragment">
 
         <LinearLayout
@@ -22,7 +23,6 @@
             android:layout_height="wrap_content"
             android:background="@color/bg_choose_item"
             android:padding="@dimen/activity_horizontal_margin"
-            app:layout_constraintTop_toTopOf="parent"
             android:orientation="horizontal">
 
             <ImageView
@@ -43,20 +43,18 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_book"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/dp_2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rl_add_classification">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/account_book_list"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@color/bg_gray"
                 android:layout_weight="3"
+                android:background="@color/bg_gray"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/classification_account_book_list_item" />
 
@@ -69,5 +67,5 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/classification_category_detail_list_item" />
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

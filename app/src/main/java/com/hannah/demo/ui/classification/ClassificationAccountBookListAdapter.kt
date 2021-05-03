@@ -1,5 +1,7 @@
 package com.hannah.demo.ui.classification
 
+import android.graphics.Color
+import android.provider.CalendarContract
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -25,19 +27,26 @@ class ClassificationAccountBookListAdapter(
 
     override fun onBindViewHolder(holder: AccountBookViewHolder, position: Int) {
         val item = books[position]
-        holder.bind(item, classificationViewModel)
+        holder.bind(item, position, classificationViewModel)
     }
+
 
     class AccountBookViewHolder(private val binding: ClassificationAccountBookListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: AccountBook, classificationViewModel: AddNewClassificationViewModel) {
+        fun bind(
+            item: AccountBook,
+            position: Int,
+            classificationViewModel: AddNewClassificationViewModel
+        ) {
             binding.viewmodel = classificationViewModel
             binding.bookName = item
+            itemView.setBackgroundColor(Color.parseColor("#ffffff"))
             binding.executePendingBindings()
         }
 
         companion object {
+            var lastPosition = 0
             fun from(parent: ViewGroup): AccountBookViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ClassificationAccountBookListItemBinding.inflate(
@@ -52,4 +61,3 @@ class ClassificationAccountBookListAdapter(
 
     override fun getItemCount(): Int = books.size
 }
-

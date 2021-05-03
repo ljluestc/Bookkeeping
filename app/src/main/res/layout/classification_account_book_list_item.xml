@@ -13,7 +13,7 @@
         android:layout_height="@dimen/text_fix_height"
         android:gravity="center"
         android:background="@color/ic_book_list_bg"
-        android:text="@{bookName.name()}"
+        android:text="@{bookName.name}"
         android:textSize="@dimen/text_medium"
         android:onClick="@{() -> viewmodel.clickBookItem(bookName)}"/>
 </layout>

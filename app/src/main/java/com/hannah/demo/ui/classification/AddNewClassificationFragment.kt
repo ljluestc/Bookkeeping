@@ -1,6 +1,7 @@
 package com.hannah.demo.ui.classification
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,15 +43,20 @@ class AddNewClassificationFragment : Fragment(){
         classificationViewModel.books.observe(viewLifecycleOwner, Observer {
             leftAdapter = ClassificationAccountBookListAdapter(it, classificationViewModel)
             addClassificationBinding.accountBookList.adapter = leftAdapter
-        })
 
-        classificationViewModel.classifications.observe(viewLifecycleOwner, Observer {
-            rightAdapter = ClassificationDetailListAdapter(it, classificationViewModel)
+            rightAdapter = ClassificationDetailListAdapter(it[0].list, classificationViewModel)
             addClassificationBinding.categoryDetailList.adapter = rightAdapter
         })
 
+//        classificationViewModel.classifications.observe(viewLifecycleOwner, Observer {
+//            rightAdapter = ClassificationDetailListAdapter(it, classificationViewModel)
+//            addClassificationBinding.categoryDetailList.adapter = rightAdapter
+//        })
+
         classificationViewModel.clickBookItemEvent.observe(viewLifecycleOwner, EventObserver{
-           Toast.makeText(requireContext(), "click the item ${it.name}", Toast.LENGTH_SHORT).show()
+            Log.d("hui-----", it.name);
+            rightAdapter = ClassificationDetailListAdapter(it.list, classificationViewModel)
+            addClassificationBinding.categoryDetailList.adapter = rightAdapter
 
         })
     }
