@@ -42,6 +42,12 @@ class FeedbackFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
                 Navigation.findNavController(fragmentFeedbackBinding.root).navigateUp()
+            }else{
+                Toast.makeText(
+                    requireContext(),
+                    "Please try again!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
     }

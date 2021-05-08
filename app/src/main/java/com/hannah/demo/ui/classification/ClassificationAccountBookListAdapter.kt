@@ -1,10 +1,11 @@
 package com.hannah.demo.ui.classification
 
 import android.graphics.Color
-import android.provider.CalendarContract
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hannah.demo.R
 import com.hannah.demo.databinding.ClassificationAccountBookListItemBinding
 import com.hannah.demo.entity.AccountBook
 
@@ -18,6 +19,7 @@ class ClassificationAccountBookListAdapter(
     private val classificationViewModel: AddNewClassificationViewModel
 ) :
     RecyclerView.Adapter<ClassificationAccountBookListAdapter.AccountBookViewHolder>() {
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -27,26 +29,27 @@ class ClassificationAccountBookListAdapter(
 
     override fun onBindViewHolder(holder: AccountBookViewHolder, position: Int) {
         val item = books[position]
-        holder.bind(item, position, classificationViewModel)
+        holder.bind(item, classificationViewModel)
+//        if(books.indexOf(item) == AccountBookViewHolder.lastPosition){
+//            holder.itemView.setBackgroundResource(R.color.colorPrimary)
+//        }else{
+//            holder.itemView.setBackgroundResource(R.color.white)
+//        }
     }
-
 
     class AccountBookViewHolder(private val binding: ClassificationAccountBookListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
             item: AccountBook,
-            position: Int,
             classificationViewModel: AddNewClassificationViewModel
         ) {
             binding.viewmodel = classificationViewModel
             binding.bookName = item
-            itemView.setBackgroundColor(Color.parseColor("#ffffff"))
             binding.executePendingBindings()
         }
 
         companion object {
-            var lastPosition = 0
             fun from(parent: ViewGroup): AccountBookViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ClassificationAccountBookListItemBinding.inflate(

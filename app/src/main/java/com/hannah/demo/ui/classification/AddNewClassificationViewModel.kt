@@ -19,19 +19,11 @@ class AddNewClassificationViewModel @ViewModelInject constructor() : ViewModel()
     private val _books = MutableLiveData<List<AccountBook>>()
     val books: LiveData<List<AccountBook>> = _books
 
-//    private val _classifications = MutableLiveData<List<ClassificationEntity>>()
-//    val classifications: LiveData<List<ClassificationEntity>> = _classifications
-
-    private val _childListData = MutableLiveData<List<CategoryEntity>>()
-    val childListData: LiveData<List<CategoryEntity>> = _childListData
-
     private val _clickBookItemEvent = MutableLiveData<Event<AccountBook>>()
     val clickBookItemEvent: LiveData<Event<AccountBook>> = _clickBookItemEvent
 
-
     init {
         _books.value = addBookData()
-//        _classifications.value = addClassificationData("DAILY")
     }
 
     private fun addClassificationData(name: String): List<ClassificationEntity> {
@@ -106,7 +98,7 @@ class AddNewClassificationViewModel @ViewModelInject constructor() : ViewModel()
     }
 
     private fun addBookData(): List<AccountBook> {
-        return listOf<AccountBook>(
+        return listOf(
             AccountBook("DAILY", addClassificationData("DAILY")),
             AccountBook("CHILD", addClassificationData("CHILD")),
             AccountBook("BUSINESS", addClassificationData("BUSINESS")),
@@ -116,6 +108,5 @@ class AddNewClassificationViewModel @ViewModelInject constructor() : ViewModel()
 
     fun clickBookItem(bookName: AccountBook) {
         _clickBookItemEvent.value = Event(bookName)
-//        v.setBackgroundColor(R.color.white)
     }
 }

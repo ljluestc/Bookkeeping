@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
  * DATE: 2020-12-01
  */
 @AndroidEntryPoint
-class AddNewClassificationFragment : Fragment(){
+class AddNewClassificationFragment : Fragment() {
 
     private val classificationViewModel by viewModels<AddNewClassificationViewModel>()
     private lateinit var addClassificationBinding: FragmentAddNewClassificationBinding
@@ -31,9 +31,10 @@ class AddNewClassificationFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        addClassificationBinding = FragmentAddNewClassificationBinding.inflate(inflater, container, false).apply {
-            viewmodel = classificationViewModel
-        }
+        addClassificationBinding =
+            FragmentAddNewClassificationBinding.inflate(inflater, container, false).apply {
+                viewmodel = classificationViewModel
+            }
         addClassificationBinding.lifecycleOwner = this.viewLifecycleOwner
         return addClassificationBinding.root
     }
@@ -48,16 +49,9 @@ class AddNewClassificationFragment : Fragment(){
             addClassificationBinding.categoryDetailList.adapter = rightAdapter
         })
 
-//        classificationViewModel.classifications.observe(viewLifecycleOwner, Observer {
-//            rightAdapter = ClassificationDetailListAdapter(it, classificationViewModel)
-//            addClassificationBinding.categoryDetailList.adapter = rightAdapter
-//        })
-
-        classificationViewModel.clickBookItemEvent.observe(viewLifecycleOwner, EventObserver{
-            Log.d("hui-----", it.name);
+        classificationViewModel.clickBookItemEvent.observe(viewLifecycleOwner, EventObserver {
             rightAdapter = ClassificationDetailListAdapter(it.list, classificationViewModel)
             addClassificationBinding.categoryDetailList.adapter = rightAdapter
-
         })
     }
 }
